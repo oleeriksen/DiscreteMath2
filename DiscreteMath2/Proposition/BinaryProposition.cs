@@ -25,7 +25,14 @@ namespace DiscreteMath2.Proposition
             return LogicFunction(mLeft.Evaluate(state), mRight.Evaluate(state));
         }
 
+        public override string ToString()
+            {
+                return mLeft.ToString() + " " + Name + " " + mRight.ToString();
+            }
+        
+
         public abstract bool LogicFunction(bool op1, bool op2);
+        public abstract string Name { get;  }
     }
 
 
@@ -37,25 +44,30 @@ namespace DiscreteMath2.Proposition
         {
             return op1 && op2;
         }
+
+        public override string Name { get { return "and"; } }
     }
 
     public class OrProposition : BinaryProposition
     {
         public OrProposition(IProposition left, IProposition right)
             : base(left, right) { }
-        public override bool LogicFunction(bool op1, bool op2)
-        {
+        public override bool LogicFunction(bool op1, bool op2) {
             return op1 || op2;
         }
+
+        public override string Name { get { return "or"; } }
+
     }
 
     public class ImpliesProposition : BinaryProposition
     {
         public ImpliesProposition(IProposition left, IProposition right)
             : base(left, right) { }
-        public override bool LogicFunction(bool op1, bool op2)
-        {
+        public override bool LogicFunction(bool op1, bool op2){
             return !op1 || op2;
         }
+        public override string Name { get { return "=>"; } }
+
     }
 }

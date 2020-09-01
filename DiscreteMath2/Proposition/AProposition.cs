@@ -8,10 +8,13 @@ namespace DiscreteMath2.Proposition
 
         public bool IsSatisfiable { get { return true; } }
 
-        abstract public ISet<string> Names { get; }
 
-        string IProposition.ToString { get; }
+        public abstract bool Evaluate(Dictionary<string, bool> state);
 
-        abstract public bool Evaluate(Dictionary<string, bool> state);
+        public abstract ISet<string> Names { get; }
+
+        public abstract override string ToString();
+
+        
     }
 }

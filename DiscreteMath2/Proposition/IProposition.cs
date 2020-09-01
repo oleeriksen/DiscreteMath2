@@ -9,6 +9,6 @@ namespace DiscreteMath2.Proposition
         bool IsTautology { get;  }
         bool IsSatisfiable { get;  }
         ISet<string> Names { get;  }
-        string ToString { get; }
+        string ToString();
     }
 }

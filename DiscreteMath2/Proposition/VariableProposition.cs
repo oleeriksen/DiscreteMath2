@@ -22,5 +22,7 @@ namespace DiscreteMath2.Proposition
         {
             return state[mName];
         }
+
+        public override string ToString() { return mName;  }
     }
 }
