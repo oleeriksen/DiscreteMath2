@@ -8,6 +8,7 @@ namespace DiscreteMath2
         {
             Console.WriteLine("Hello World!");
             Proposition.Runner r = new Proposition.Runner();
+            r.Test01();
            
         }
     }
